@@ -431,6 +431,7 @@ class DOMDocumentWrapper {
 	 */
 	public function import($source, $sourceCharset = null) {
 		// TODO charset conversions
+		libxml_use_internal_errors();
 		$return = array();
 		if ($source instanceof DOMNODE && !($source instanceof DOMNODELIST))
 			$source = array($source);
